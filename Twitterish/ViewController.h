@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UITableViewController {
+    NSArray *tweets;
+    IBOutlet UIImageView *profileImage;
+    IBOutlet UILabel *nameLabel;
+    IBOutlet UILabel *tweetLabel;
+}
+- (void)fetchtweets;
 @end

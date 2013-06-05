@@ -18,6 +18,9 @@
 		B618AC1A175D8BD900D41670 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B618AC19175D8BD900D41670 /* Default-568h@2x.png */; };
 		B618AC1D175D8BD900D41670 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B618AC1B175D8BD900D41670 /* MainStoryboard.storyboard */; };
 		B618AC20175D8BD900D41670 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B618AC1F175D8BD900D41670 /* ViewController.m */; };
+		B618ACC5175EADE800D41670 /* creme_brelee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B618ACC4175EADE800D41670 /* creme_brelee.jpg */; };
+		B618ACC7175EB34B00D41670 /* TimelineTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B618ACC6175EB34B00D41670 /* TimelineTableCell.xib */; };
+		B618ACCA175EB65200D41670 /* TimelineTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B618ACC9175EB65200D41670 /* TimelineTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		B618AC1C175D8BD900D41670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		B618AC1E175D8BD900D41670 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B618AC1F175D8BD900D41670 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B618ACC4175EADE800D41670 /* creme_brelee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = creme_brelee.jpg; sourceTree = "<group>"; };
+		B618ACC6175EB34B00D41670 /* TimelineTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimelineTableCell.xib; path = ../TimelineTableCell.xib; sourceTree = "<group>"; };
+		B618ACC8175EB65200D41670 /* TimelineTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimelineTableCell.h; path = ../TimelineTableCell.h; sourceTree = "<group>"; };
+		B618ACC9175EB65200D41670 /* TimelineTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimelineTableCell.m; path = ../TimelineTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +93,11 @@
 				B618AC12175D8BD900D41670 /* AppDelegate.h */,
 				B618AC13175D8BD900D41670 /* AppDelegate.m */,
 				B618AC1B175D8BD900D41670 /* MainStoryboard.storyboard */,
+				B618ACC6175EB34B00D41670 /* TimelineTableCell.xib */,
 				B618AC1E175D8BD900D41670 /* ViewController.h */,
 				B618AC1F175D8BD900D41670 /* ViewController.m */,
+				B618ACC8175EB65200D41670 /* TimelineTableCell.h */,
+				B618ACC9175EB65200D41670 /* TimelineTableCell.m */,
 				B618AC0A175D8BD900D41670 /* Supporting Files */,
 			);
 			path = Twitterish;
@@ -96,6 +106,7 @@
 		B618AC0A175D8BD900D41670 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B618ACC4175EADE800D41670 /* creme_brelee.jpg */,
 				B618AC0B175D8BD900D41670 /* Twitterish-Info.plist */,
 				B618AC0C175D8BD900D41670 /* InfoPlist.strings */,
 				B618AC0F175D8BD900D41670 /* main.m */,
@@ -163,6 +174,8 @@
 				B618AC18175D8BD900D41670 /* Default@2x.png in Resources */,
 				B618AC1A175D8BD900D41670 /* Default-568h@2x.png in Resources */,
 				B618AC1D175D8BD900D41670 /* MainStoryboard.storyboard in Resources */,
+				B618ACC5175EADE800D41670 /* creme_brelee.jpg in Resources */,
+				B618ACC7175EB34B00D41670 /* TimelineTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +189,7 @@
 				B618AC10175D8BD900D41670 /* main.m in Sources */,
 				B618AC14175D8BD900D41670 /* AppDelegate.m in Sources */,
 				B618AC20175D8BD900D41670 /* ViewController.m in Sources */,
+				B618ACCA175EB65200D41670 /* TimelineTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +312,7 @@
 				B618AC25175D8BD900D41670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
