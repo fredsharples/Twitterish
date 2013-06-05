@@ -114,17 +114,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    /*
-     if ([segue.identifier isEqualToString:@"showTweet"])
-     {
-     
-     NSInteger row = [[self tableView].indexPathForSelectedRow row];
-     NSDictionary *tweet = [tweets objectAtIndex:row];
-     
-     //DetailViewController *detailController = segue.destinationViewController;
-     //detailController.detailItem = tweet;
-     }
-     */
+
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
