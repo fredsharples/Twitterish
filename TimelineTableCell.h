@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MCSwipeTableViewCell.h"
 
-@interface TimelineTableCell : MCSwipeTableViewCell
+@interface TimelineTableCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *tweetLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;

@@ -59,16 +59,13 @@ static NSTimeInterval const kMCDurationHightLimit = 0.1; // Highest duration whe
 @property(nonatomic, assign) CGFloat currentPercentage;
 
 @property(nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
-
-
+@property(nonatomic, strong) UIImageView *slidingImageView;
+@property(nonatomic, strong) NSString *currentImageName;
+@property(nonatomic, strong) UIView *colorIndicatorView;
 
 @end
 
 @implementation MCSwipeTableViewCell
-
-//@synthesize nameLabel = _nameLabel;
-//@synthesize tweetLabel = _tweetLabel;
-//@synthesize thumbnailImageView = _thumbnailImageView;
 
 #pragma mark - Initialization
 

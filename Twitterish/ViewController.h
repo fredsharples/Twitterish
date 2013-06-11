@@ -9,12 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UITableViewController {
-NSArray *tweets;
+    NSArray *tweets;
     IBOutlet UIImageView *profileImage;
-  IBOutlet UILabel *nameLabel;
-   IBOutlet UILabel *tweetLabel;
+    IBOutlet UILabel *nameLabel;
+    IBOutlet UILabel *tweetLabel;
 }
 - (void)fetchtweets;
-- (void)reloadCellWithNewColor:(id)sender;
-
 @end

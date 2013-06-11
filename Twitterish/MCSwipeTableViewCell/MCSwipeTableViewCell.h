@@ -38,11 +38,6 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellMode){
 
 @property(nonatomic, assign) id <MCSwipeTableViewCellDelegate> delegate;
 
-//FS new properties for fading out color bar.
-@property(nonatomic, strong) UIImageView *slidingImageView;
-@property(nonatomic, strong) UIView *colorIndicatorView;
-@property(nonatomic, strong) NSString *currentImageName;
-
 @property(nonatomic, copy) NSString *firstIconName;
 @property(nonatomic, copy) NSString *secondIconName;
 @property(nonatomic, copy) NSString *thirdIconName;
@@ -53,13 +48,7 @@ typedef NS_ENUM(NSUInteger, MCSwipeTableViewCellMode){
 @property(nonatomic, strong) UIColor *thirdColor;
 @property(nonatomic, strong) UIColor *fourthColor;
 
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *tweetLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
-
 @property(nonatomic, assign) MCSwipeTableViewCellMode mode;
-
-- (void)notifyDelegate;
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier

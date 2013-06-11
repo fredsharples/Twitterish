@@ -10,6 +10,9 @@
 
 @implementation TimelineTableCell
 
+@synthesize nameLabel = _nameLabel;
+@synthesize tweetLabel = _prepTimeLabel;
+@synthesize thumbnailImageView = _thumbnailImageView;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
