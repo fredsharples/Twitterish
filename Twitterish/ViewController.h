@@ -10,9 +10,9 @@
 
 @interface ViewController : UITableViewController {
 NSArray *tweets;
-  //  IBOutlet UIImageView *profileImage;
- // IBOutlet UILabel *nameLabel;
-  // IBOutlet UILabel *tweetLabel;
+    IBOutlet UIImageView *profileImage;
+  IBOutlet UILabel *nameLabel;
+   IBOutlet UILabel *tweetLabel;
 }
 - (void)fetchtweets;
 - (void)reloadCellWithNewColor:(id)sender;

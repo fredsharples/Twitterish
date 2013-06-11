@@ -8,14 +8,13 @@
 
 #import "ViewController.h"
 #import "MCSwipeTableViewCell.h"
-//#import "TimelineTableCell.h"
+#import "TimelineTableCell.h"
 
 @interface ViewController () <MCSwipeTableViewCellDelegate>
-
-//{
-  //NSMutableArray *_objects;
-//}
-@property(nonatomic,assign) NSUInteger nbItems;
+{
+  NSMutableArray *_objects;  
+}
+//@property(nonatomic,assign) NSUInteger nbItems;
 
 @end
 
@@ -24,7 +23,7 @@
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
-        _nbItems = 2;
+       // _nbItems = 2;
     }
     return self;
 }
@@ -34,7 +33,9 @@
     [super viewDidLoad];
     [self fetchtweets];
     
-   
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [backgroundView setBackgroundColor:[UIColor colorWithRed:227.0 / 255.0 green:227.0 / 255.0 blue:227.0 / 255.0 alpha:1.0]];
+    [self.tableView setBackgroundView:backgroundView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,16 +45,16 @@
     
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return tweets.count;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return tweets.count;
-}
+ 
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,72 +69,6 @@
 
 #pragma mark - Table view layout
 
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // static NSString *CellIdentifier = @"Cell";
-    
-    static NSString *CellIdentifier = @"TweetCell";
-
-    
-    MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    NSDictionary *tweet = [tweets objectAtIndex:indexPath.row];
-    NSString *tweetText = [tweet objectForKey:@"text"];
-    NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
-    NSString *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-
-    UIImageView *tweetImageView = (UIImageView *)[cell viewWithTag:100];
-    tweetImageView.image = [UIImage imageWithData:data];
-    
-    
-    UILabel *tweetNameLabel = (UILabel *)[cell viewWithTag:101];
-    tweetNameLabel.text = name;
-    
-    UILabel *tweetContentLabel = (UILabel *)[cell viewWithTag:102];
-    tweetContentLabel.text = tweetText;
-
-    
-    [cell setDelegate:self];
-    [cell setFirstStateIconName:@"check.png"
-                     firstColor:[UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0]
-            secondStateIconName:@"cross.png"
-                    secondColor:[UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0]
-                  thirdIconName:@"clock.png"
-                     thirdColor:[UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0]
-                 fourthIconName:@"list.png"
-                    fourthColor:[UIColor colorWithRed:206.0 / 255.0 green:149.0 / 255.0 blue:98.0 / 255.0 alpha:1.0]];
-    
-    [cell.contentView setBackgroundColor:[UIColor clearColor]];
-    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
-    
-  /*  if (indexPath.row % 2) {
-        [cell.textLabel setText:@"Switch Mode Cell"];
-        [cell.detailTextLabel setText:@"Swipe to switch"];
-        [cell setMode:MCSwipeTableViewCellModeSwitch];
-    }
-    else {
-        [cell.textLabel setText:@"Exit Mode Cell"];
-        [cell.detailTextLabel setText:@"Swipe to delete"];
-        [cell setMode:MCSwipeTableViewCellModeExit];
-    }
-   */
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ViewController *tableViewController = [[ViewController alloc] init];
-    [self.navigationController pushViewController:tableViewController animated:YES];
-}
-
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -146,18 +81,18 @@
     static NSString *CellIdentifier = @"TweetCell";
     
     
-    MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    //TimelineTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TimelineTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
     if (cell == nil) {
-       cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+       //cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         //for use with a nib
         
        // NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
        // cell = (MCSwipeTableViewCell *)[nib objectAtIndex:0];
         
-        //cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
     
@@ -175,7 +110,7 @@
     UIImageView *tweetImageView = (UIImageView *)[cell viewWithTag:100];
     tweetImageView.image = [UIImage imageWithData:data];
 
- 
+    
     UILabel *tweetNameLabel = (UILabel *)[cell viewWithTag:101];
     tweetNameLabel.text = name;
     
@@ -188,7 +123,7 @@
    // [cell.textLabel setText:name];
    // [cell.detailTextLabel setText:tweetText];
     
-    
+    /*
         //Using Subviews
         UILabel *customLabelText = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100,20)];
         customLabelText.font = [UIFont fontWithName:@"Avenir" size:11.0];
@@ -205,12 +140,12 @@
         [customTweetText setText:tweetText];
         
         [cell.contentView addSubview:customTweetText];
-    
+     */
 
        // cell.imageView.image = [UIImage imageWithData:data];
         
     
-   
+    
     [cell setFirstStateIconName:@"check.png"
                      firstColor:[UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0]
             secondStateIconName:@"cross.png"
@@ -228,8 +163,6 @@
     return cell;
     
 }
-
-*/
 
 #pragma mark - Get data from Twitter
 
@@ -254,27 +187,17 @@
 
 
 #pragma mark - MCSwipeTableViewCellDelegate
-- (void)swipeTableViewCell:(MCSwipeTableViewCell *)cell didTriggerState:(MCSwipeTableViewCellState)state withMode:(MCSwipeTableViewCellMode)mode {
-    NSLog(@"IndexPath : %@ - MCSwipeTableViewCellState : %d - MCSwipeTableViewCellMode : %d", [self.tableView indexPathForCell:cell], state, mode);
-    
-    if (mode == MCSwipeTableViewCellModeExit) {
-       // _nbItems--;
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-       // [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell:cell]] withRowAnimation:UITableViewRowAnimationFade];
-    }
-}
 
-/*
 - (void)swipeTableViewCell:(MCSwipeTableViewCell *)cell didTriggerState:(MCSwipeTableViewCellState)state withMode:(MCSwipeTableViewCellMode)mode {
     NSLog(@"IndexPath : %@ - MCSwipeTableViewCellState : %d - MCSwipeTableViewCellMode : %d", [self.tableView indexPathForCell:cell], state, mode);
    
     
     if (mode == MCSwipeTableViewCellModeExit) {
         [UIView animateWithDuration:0.4 animations:^{
-            //cell.slidingImageView.alpha = 1.0;
-            //cell.slidingImageView.alpha = 0.0;
-            //cell.colorIndicatorView.alpha = 1.0;
-           // cell.colorIndicatorView.alpha = 0.0;
+            cell.slidingImageView.alpha = 1.0;
+            cell.slidingImageView.alpha = 0.0;
+            cell.colorIndicatorView.alpha = 1.0;
+            cell.colorIndicatorView.alpha = 0.0;
             //[cell.textLabel setTextColor:[UIColor redColor]];
         }
          
@@ -289,8 +212,6 @@
         }
          
 }
- */
-
 - (void)reloadCellWithNewColor:(MCSwipeTableViewCell *)cell{
     //[super reloadCellWithNewColor:newColor];
 //    cell.backgroundColor = [UIColor redColor];
@@ -301,7 +222,7 @@
 
 
 - (void)reload:(id)sender {
-    _nbItems++;
+
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
