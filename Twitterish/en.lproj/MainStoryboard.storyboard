@@ -13,26 +13,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="left" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" rowHeight="70" id="GAg-4d-kvC" customClass="TimelineTableCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" rowHeight="88" id="GAg-4d-kvC">
+                                <rect key="frame" x="0.0" y="22" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dw3-m2-B2a">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="57" id="4sY-ur-E0C"/>
-                                                <constraint firstAttribute="height" constant="49" id="Peo-x7-Xfc"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="Dw3-m2-B2a" firstAttribute="top" secondItem="GAg-4d-kvC" secondAttribute="top" constant="9" id="3pP-33-flQ"/>
-                                    <constraint firstItem="Dw3-m2-B2a" firstAttribute="leading" secondItem="GAg-4d-kvC" secondAttribute="leading" constant="10" id="kKc-oQ-F3p"/>
-                                </constraints>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
